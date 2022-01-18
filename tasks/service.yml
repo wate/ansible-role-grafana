@@ -1,0 +1,12 @@
+---
+- name: grafana is active and enabled on system startup
+  systemd:
+    name: grafana-server
+    state: started
+    enabled: true
+- name: allow grafana port
+  ufw:
+    rule: allow
+    port: "{{ grafana_port | string }}"
+    proto: tcp
+  when: grafana_allow_connect_other_host | default(false)

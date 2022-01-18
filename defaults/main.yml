@@ -1,0 +1,196 @@
+---
+grafana_port: 3000
+
+grafana_base_cfg: []
+  # - section: server
+  #   option: http_port
+  #   value: 3000
+  # - section: database
+  #   option: type
+  #   value: mysql
+  # - section: database
+  #   option: host
+  #   value: 127.0.0.1:3306
+  # - section: database
+  #   option: name
+  #   value: grafana
+  # - section: database
+  #   option: user
+  #   value: root
+  # - section: database
+  #   option: password
+  #   value: "#password"
+
+grafana_access_control_cfg:
+  apiVersion: 1
+  # # list of default built-in role assignments that should be removed
+  # removeDefaultAssignments:
+  #   # <string>, must be one of the Organization roles (`Viewer`, `Editor`, `Admin`) or `Grafana Admin`
+  #   - builtInRole: "Grafana Admin"
+  #     # <string>, must be one of the existing fixed roles
+  #     fixedRole: "fixed:permissions:admin"
+  # # list of default built-in role assignments that should be added back
+  # addDefaultAssignments:
+  #   # <string>, must be one of the Organization roles (`Viewer`, `Editor`, `Admin`) or `Grafana Admin`
+  #   - builtInRole: "Admin"
+  #     # <string>, must be one of the existing fixed roles
+  #     fixedRole: "fixed:reporting:admin:read"
+  # # list of roles that should be deleted
+  # deleteRoles:
+  #   # <string> name of the role you want to create. Required if no uid is set
+  #   - name: "custom:reports:editor"
+  #     # <string> uid of the role. Required if no name
+  #     uid: "customreportseditor1"
+  #     # <int> org id. will default to Grafana's default if not specified
+  #     orgId: 1
+  #     # <bool> force deletion revoking all grants of the role
+  #     force: true
+  #   - name: "custom:global:reports:reader"
+  #     uid: "customglobalreportsreader1"
+  #     # <bool> overwrite org id and removes a global role
+  #     global: true
+  #     force: true
+  # # list of roles to insert/update depending on what is available in the database
+  # roles:
+  #   # <string, required> name of the role you want to create. Required
+  #   - name: "custom:users:editor"
+  #     # <string> uid of the role. Has to be unique for all orgs.
+  #     uid: customuserseditor1
+  #     # <string> description of the role, informative purpose only.
+  #     description: "Role for our custom user editors"
+  #     # <int> version of the role, Grafana will update the role when increased
+  #     version: 2
+  #     # <int> org id. will default to Grafana's default if not specified
+  #     orgId: 1
+  #     # <list> list of the permissions granted by this role
+  #     permissions:
+  #       # <string, required> action allowed
+  #       - action: "users:read"
+  #         #<string> scope it applies to
+  #         scope: "users:*"
+  #       - action: "users:write"
+  #         scope: "users:*"
+  #       - action: "users:create"
+  #         scope: "users:*"
+  #     # <list> list of builtIn roles the role should be assigned to
+  #     builtInRoles:
+  #       # <string, required> name of the builtin role you want to assign the role to
+  #       - name: "Editor"
+  #         # <int> org id. will default to the role org id
+  #         orgId: 1
+  #   - name: "custom:global:users:reader"
+  #     uid: "customglobalusersreader1"
+  #     description: "Global Role for custom user readers"
+  #     version: 1
+  #     # <bool> overwrite org id and creates a global role
+  #     global: true
+  #     permissions:
+  #       - action: "users:read"
+  #         scope: "users:*"
+  #     builtInRoles:
+  #       - name: "Viewer"
+  #         orgId: 1
+  #       - name: "Editor"
+  #         # <bool> overwrite org id and assign role globally
+  #         global: true
+
+grafana_dashboards_cfg:
+  apiVersion: 1
+  # providers:
+  #   - name: 'default'
+  #     orgId: 1
+  #     folder: ''
+  #     folderUid: ''
+  #     type: file
+  #     options:
+  #       path: /var/lib/grafana/dashboards
+
+grafana_datasources_cfg:
+  apiVersion: 1
+  # # list of datasources that should be deleted from the database
+  # deleteDatasources:
+  #   - name: Graphite
+  #     orgId: 1
+  # # list of datasources to insert/update depending
+  # # on what's available in the database
+  # datasources:
+  #   # <string, required> name of the datasource. Required
+  # - name: Graphite
+  #   # <string, required> datasource type. Required
+  #   type: graphite
+  #   # <string, required> access mode. direct or proxy. Required
+  #   access: proxy
+  #   # <int> org id. will default to orgId 1 if not specified
+  #   orgId: 1
+  #   # <string> url
+  #   url: http://localhost:8080
+  #   # <string> database password, if used
+  #   password:
+  #   # <string> database user, if used
+  #   user:
+  #   # <string> database name, if used
+  #   database:
+  #   # <bool> enable/disable basic auth
+  #   basicAuth:
+  #   # <string> basic auth username
+  #   basicAuthUser:
+  #   # <string> basic auth password
+  #   basicAuthPassword:
+  #   # <bool> enable/disable with credentials headers
+  #   withCredentials:
+  #   # <bool> mark as default datasource. Max one per org
+  #   isDefault:
+  #   # <map> fields that will be converted to json and stored in json_data
+  #   jsonData:
+  #     graphiteVersion: "1.1"
+  #     tlsAuth: true
+  #     tlsAuthWithCACert: true
+  #     httpHeaderName1: "Authorization"
+  #   # <string> json object of data that will be encrypted.
+  #   secureJsonData:
+  #     tlsCACert: "..."
+  #     tlsClientCert: "..."
+  #     tlsClientKey: "..."
+  #     # <openshift\kubernetes token example>
+  #     httpHeaderValue1: "Bearer xf5yhfkpsnmgo"
+  #   version: 1
+  #   # <bool> allow users to edit datasources from the UI.
+  #   editable: false
+
+grafana_notifiers_cfg:
+  apiVersion: 1
+  # notifiers:
+  #   - name: default-slack-temp
+  #     type: slack
+  #     org_name: Main Org.
+  #     is_default: true
+  #     uid: notifier1
+  #     settings:
+  #       recipient: "XXX"
+  #       token: "xoxb"
+  #       uploadImage: true
+  #       url: https://slack.com
+  #   - name: default-email
+  #     type: email
+  #     org_id: 1
+  #     uid: notifier2
+  #     is_default: false
+  #     settings:
+  #       addresses: example11111@example.com
+  # delete_notifiers:
+  #   - name: default-slack-temp
+  #     org_name: Main Org.
+  #     uid: notifier1root@default:/etc/grafana/provisioning/notifiers#
+
+grafana_plugins_cfg:
+  apiVersion: 1
+  # apps:
+  #   - type: grafana-example-app
+  #     org_name: Main Org.
+  #     disabled: true
+  #   - type: raintank-worldping-app
+  #     org_id: 1
+  #     jsonData:
+  #       apiKey: "API KEY"
+
+# grafana_allow_connect_other_host: false
