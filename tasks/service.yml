@@ -1,6 +1,6 @@
 ---
 - name: grafana is active and enabled on system startup
-  systemd:
+  ansible.builtin.systemd:
     name: grafana-server
     state: started
     enabled: true
