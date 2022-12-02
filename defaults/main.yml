@@ -2,24 +2,24 @@
 grafana_port: 3000
 
 grafana_base_cfg: []
-  # - section: server
-  #   option: http_port
-  #   value: 3000
-  # - section: database
-  #   option: type
-  #   value: mysql
-  # - section: database
-  #   option: host
-  #   value: 127.0.0.1:3306
-  # - section: database
-  #   option: name
-  #   value: grafana
-  # - section: database
-  #   option: user
-  #   value: root
-  # - section: database
-  #   option: password
-  #   value: "#password"
+# - section: server
+#   option: http_port
+#   value: 3000
+# - section: database
+#   option: type
+#   value: mysql
+# - section: database
+#   option: host
+#   value: 127.0.0.1:3306
+# - section: database
+#   option: name
+#   value: grafana
+# - section: database
+#   option: user
+#   value: root
+# - section: database
+#   option: password
+#   value: "#password"
 
 grafana_access_control_cfg:
   apiVersion: 1
