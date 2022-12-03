@@ -1,6 +1,12 @@
 ---
+## ---------
+## ポート番号
+## ---------
 grafana_port: 3000
 
+## ---------
+## 基本設定
+## ---------
 grafana_base_cfg: []
 # - section: server
 #   option: http_port
@@ -21,6 +27,9 @@ grafana_base_cfg: []
 #   option: password
 #   value: "#password"
 
+## ---------
+## アクセスコントロール設定
+## ---------
 grafana_access_control_cfg:
   apiVersion: 1
   # # list of default built-in role assignments that should be removed
@@ -94,6 +103,9 @@ grafana_access_control_cfg:
   #         # <bool> overwrite org id and assign role globally
   #         global: true
 
+## ---------
+## ダッシュボード設定
+## ---------
 grafana_dashboards_cfg:
   apiVersion: 1
   # providers:
@@ -105,6 +117,9 @@ grafana_dashboards_cfg:
   #     options:
   #       path: /var/lib/grafana/dashboards
 
+## ---------
+## データソース設定
+## ---------
 grafana_datasources_cfg:
   apiVersion: 1
   # # list of datasources that should be deleted from the database
@@ -157,6 +172,9 @@ grafana_datasources_cfg:
   #   # <bool> allow users to edit datasources from the UI.
   #   editable: false
 
+## ---------
+## 通知設定
+## ---------
 grafana_notifiers_cfg:
   apiVersion: 1
   # notifiers:
@@ -182,6 +200,9 @@ grafana_notifiers_cfg:
   #     org_name: Main Org.
   #     uid: notifier1root@default:/etc/grafana/provisioning/notifiers#
 
+## ---------
+## プラグイン設定
+## ---------
 grafana_plugins_cfg:
   apiVersion: 1
   # apps:

@@ -1,33 +1,57 @@
 grafana
-=========
+=================
 
-A brief description of the role goes here.
+Setup grafana
 
-Requirements
-------------
+OS Platform
+-----------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+### Debian
+
+- bullseye
+- buster
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+### `grafana_port`
 
-Dependencies
-------------
+ポート番号
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+### `grafana_base_cfg`
+
+基本設定
+
+### `grafana_access_control_cfg`
+
+アクセスコントロール設定
+
+### `grafana_dashboards_cfg`
+
+ダッシュボード設定
+
+### `grafana_datasources_cfg`
+
+データソース設定
+
+### `grafana_notifiers_cfg`
+
+通知設定
+
+### `grafana_plugins_cfg`
+
+プラグイン設定
 
 Example Playbook
-----------------
+--------------
 
-```yml
+```yaml
 - hosts: servers
   roles:
     - role: grafana
 ```
 
 License
--------
+--------------
 
 Apache License 2.0
