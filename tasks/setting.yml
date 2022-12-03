@@ -1,6 +1,6 @@
 ---
 - name: update grafana base settings
-  ini_file:
+  community.general.ini_file:
     path: "{{ grafana_config_dir }}/grafana.ini"
     section: "{{ item.section }}"
     option: "{{ item.option | default(omit) }}"
