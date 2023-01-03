@@ -1,16 +1,16 @@
 ---
-- name: install dependency packages
+- name: Install dependency packages
   ansible.builtin.apt:
     name:
       - apt-transport-https
       - ca-certificates
       - curl
       - gnupg
-- name: add apt signing key
+- name: Add apt signing key
   ansible.builtin.apt_key:
     url: https://packages.grafana.com/gpg.key
     state: present
-- name: add grafana repository
+- name: Add grafana repository
   ansible.builtin.apt_repository:
     filename: grafana
     repo: deb https://packages.grafana.com/oss/deb stable main

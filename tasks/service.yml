@@ -1,10 +1,10 @@
 ---
-- name: grafana is active and enabled on system startup
+- name: Service grafana is active and enabled on system startup
   ansible.builtin.systemd:
     name: grafana-server
     state: started
     enabled: true
-- name: allow grafana port
+- name: Allow grafana port
   community.general.ufw:
     rule: allow
     port: "{{ grafana_port | string }}"

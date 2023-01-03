@@ -1,5 +1,5 @@
 ---
-- name: update grafana base settings
+- name: Update grafana base settings
   community.general.ini_file:
     path: "{{ grafana_config_dir }}/grafana.ini"
     section: "{{ item.section }}"
@@ -10,7 +10,7 @@
     mode: "0640"
   loop: "{{ grafana_base_cfg }}"
   notify: restart grafana
-- name: create/update grafana settings
+- name: Create/update grafana settings
   ansible.builtin.template:
     src: custom.yml.j2
     dest: "{{ grafana_config_provisioning_dir }}/{{ item.name }}/custom.yml"
