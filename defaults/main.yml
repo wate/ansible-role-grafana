@@ -8,9 +8,18 @@ grafana_port: 3000
 ## 基本設定
 ## ---------
 grafana_base_cfg: []
+# - section: security
+#   option: admin_user
+#   value: admin
+# - section: security
+#   option: admin_password
+#   value: admin
+# - section: security
+#   option: admin_email
+#   value: admin@localhost
 # - section: server
 #   option: http_port
-#   value: 3000
+#   value: "{{ grafana_port }}"
 # - section: database
 #   option: type
 #   value: mysql
