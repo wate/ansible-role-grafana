@@ -9,7 +9,7 @@
     group: grafana
     mode: "0640"
   loop: "{{ grafana_base_cfg }}"
-  notify: restart grafana
+  notify: Restart grafana
 - name: Create/update grafana settings
   ansible.builtin.template:
     src: custom.yml.j2
@@ -17,7 +17,7 @@
     owner: root
     group: grafana
     mode: "0640"
-  notify: restart grafana
+  notify: Restart grafana
   loop:
     - name: access-control
       value: "{{ grafana_access_control_cfg }}"

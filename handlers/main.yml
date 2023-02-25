@@ -1,9 +1,9 @@
 ---
-- name: restart grafana
+- name: Restart grafana
   ansible.builtin.systemd:
     state: restarted
     name: grafana-server
-- name: reload grafana
+- name: Reload grafana
   ansible.builtin.systemd:
     state: reloaded
     name: grafana-server
