@@ -1,3 +1,6 @@
 ---
+grafana_apt_key_url: https://packages.grafana.com/gpg.key
+grafana_apt_key_dest: /usr/share/keyrings/grafana.gpg.key
+
 grafana_config_dir: /etc/grafana
 grafana_config_provisioning_dir: "{{ grafana_config_dir }}/provisioning"
