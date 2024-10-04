@@ -52,6 +52,8 @@ Role Variables
 
 #### `grafana_apt_key_url`
 
+#### `grafana_apt_key_download_dest`
+
 #### `grafana_apt_key_dest`
 
 #### `grafana_config_dir`
